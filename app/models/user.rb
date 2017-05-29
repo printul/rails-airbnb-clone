@@ -8,9 +8,7 @@ class User < ApplicationRecord
   has_many :bookings
 
   def my_bookings
-    @my_bookings = User.find(id)
-    return @my_bookings.services.map do |service|
-      service.bookings
-    end
+    @user = User.find(id)
+    return @user.services.map { |service| service.bookings }
   end
 end
