@@ -10,6 +10,14 @@
   justify-content: space-between;
 }
 
+
+.fa.fa-video-camera {
+  font-size: 45px;
+  color: #F85726;
+  &.hover {
+    opacity: 0.6;
+  }
+}
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
@@ -54,15 +62,15 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
+  background-color: #F85726;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 2px solid #F85726;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: #F85726;
+  border-color: #FF973A;
 }
 
 /* Navbar search form */
