@@ -1,7 +1,7 @@
 <div class="container">
 <% @services.each do |service| %>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-4">
       <img src="https://unsplash.it/200/300/?random" alt="kudoz" class="product-image hidden-xs">
       <div class='product-body'>
         <h3><%= service.name %> </h3>
@@ -13,6 +13,7 @@
         <li><a href=""><i class="fa fa-star"></i></a></li>
       </ul>
     </div>
+    <%= link_to "aaaa", vendor_service_path(service) %>
   </div>
   <% end %>
 </div>

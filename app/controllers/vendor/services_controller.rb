@@ -18,7 +18,7 @@ class Vendor::ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.user = current_user
     if @service.save
-      redirect_to vendor_service_path(@service)
+      redirect_to vendor_services_path
     else
       render :new
     end
