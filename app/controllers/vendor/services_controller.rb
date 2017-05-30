@@ -43,7 +43,7 @@ class Vendor::ServicesController < ApplicationController
   end
 
   def service_params
-    params.require(:service).permit(:name, :description, :user_id, :daily_rate, :is_active, photos: [])
+    params.require(:service).permit(:name, :description, :user_id, :daily_rate, :is_active, photos: [], :category)
   end
 
 end

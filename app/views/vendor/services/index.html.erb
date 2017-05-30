@@ -1,11 +1,17 @@
 <div class="container">
+  <div class="row">
+    <%= link_to "Create a new service", new_vendor_service_path(@service), class: "btn btn-primary btn-lg" %>
+  </div>
+</div>
+<div class="container">
 <% @services.each do |service| %>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <img src="https://unsplash.it/200/300/?random" alt="kudoz" class="product-image hidden-xs">
       <div class='product-body'>
         <h3><%= service.name %> </h3>
-        <p><%= service.description %> </p>
+        <p><%= service.description %></p>
+        <p><%= service.category %></p>
       </div>
       <ul class="list-inline product-controls hidden-sm hidden-xs">
         <li><a href=""><i class="fa fa-heart"></i></a></li>
@@ -13,7 +19,7 @@
         <li><a href=""><i class="fa fa-star"></i></a></li>
       </ul>
     </div>
-    <%= link_to "aaaa", vendor_service_path(service) %>
+    <%= link_to service.name, vendor_service_path(service) %>
   </div>
   <% end %>
 </div>
