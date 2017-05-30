@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_user, only: [:index, :new, :create, :update]
-  before_action :set_booking, only: [:create, :edit, :update, :show]
+  before_action :set_booking, only: [:edit, :update, :show]
   before_action :set_service, only: [:new, :create, :update]
 
   def index
@@ -19,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.service = @service
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to service_booking_path(@service, @booking)
     else
       render 'new'
     end

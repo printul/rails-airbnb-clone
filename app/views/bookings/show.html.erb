@@ -1,2 +1,8 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<p><%= @booking.service.name %></p>
+<p><%= @booking.service.description %></p>
+<p><%= @booking.service.daily_rate %></p>
+<p><%= @booking.start_date %></p>
+<p><%= @booking.end_date %></p></p>
+<p><%= link_to 'Edit', edit_service_booking_path(@booking) %></p>
+
+
