@@ -1,3 +1,4 @@
+
 <div class="container">
 <% @services.each do |service| %>
   <div class="row">
@@ -16,5 +17,12 @@
   </div>
   <% end %>
 </div>
+
+<h1>Browse Services</h1>
+
+<% @services.each do |service| %>
+  <p><%= link_to service.name, service_path(service) %></p>
+<% end %>
+
 
 

@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # validates :first_name, :last_name, :address, presence: true
   # validates :first_name, :last_name, length: { maximum: 50 }
 
-  def my_bookings
+  def my_vendor_bookings
     @user = User.find(id)
     return @user.services.map { |service| service.bookings }
   end
