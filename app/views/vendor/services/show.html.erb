@@ -1,0 +1,7 @@
+<%= @service.name %>
+<%= @service.description %>
+<%= @service.daily_rate %>
+<%= @service.is_active %>
+
+<%= link_to "edit", edit_vendor_service_path(@service), class: "btn btn-danger" %>
+<%= link_to "Back to the Service list", vendor_services_path, class: "btn btn-success" %>
