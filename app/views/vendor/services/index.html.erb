@@ -3,11 +3,12 @@
     <%= link_to "Create a new service", new_vendor_service_path(@service), class: "btn btn-primary btn-lg" %>
   </div>
 </div>
+
 <div class="container">
 <% @services.each do |service| %>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <img src="https://unsplash.it/200/300/?random" alt="kudoz" class="product-image hidden-xs">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/201/300/?random');">
       <div class='product-body'>
         <h3><%= service.name %> </h3>
         <p><%= service.description %></p>
@@ -18,10 +19,13 @@
         <li><a href=""><i class="fa fa-share"></i></a></li>
         <li><a href=""><i class="fa fa-star"></i></a></li>
       </ul>
+      <%= link_to "", vendor_service_path(service), class: "card-link" %>
     </div>
-    <%= link_to service.name, vendor_service_path(service) %>
+  </div>
   </div>
   <% end %>
 </div>
+
+
 
 
