@@ -1,6 +1,12 @@
-<%= simple_form_for [@service, @booking] do |f| %>
-<%= f.input :start_date %>
-<%= f.input :end_date %>
-<%= f.input :order_status %>
-<%= f.submit %>
-<% end %>
+<div class="container padded">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <%= simple_form_for [@service, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :order_status %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
