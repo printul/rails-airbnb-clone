@@ -3,7 +3,7 @@ class Vendor::BookingsController < ApplicationController
   before_action :set_service, only: [:new, :create]
 
   def index
-    @bookings = current_user.my_vendor_bookings
+    @bookings = current_user.my_vendor_bookings.sort
   end
 
   def show
