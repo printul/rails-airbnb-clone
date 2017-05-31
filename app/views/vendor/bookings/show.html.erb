@@ -17,20 +17,20 @@
           </ul>
       </div>
       <div class="col-xs-12 col-sm-6">
-      <h3>Vendor Details:</h3>
+      <h3>Client Details:</h3>
         <ul class="list-unstyled">
           <li>
-            <%= @booking.service.user.first_name %>
-            <%= @booking.service.user.last_name %>
+            <%= @booking.user.first_name %>
+            <%= @booking.user.last_name %>
           </li>
-          <li><%= @booking.service.user.email %></li>
-          <li><%= @booking.service.user.phone_number %></li>
+          <li><%= @booking.user.email %></li>
+          <li><%= @booking.user.phone_number %></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="container text-center">
-    <%= link_to 'View all my bookings', bookings_path, class:"btn btn-primary" %>
+    <%= link_to 'View all my bookings', vendor_bookings_path, class:"btn btn-primary" %>
     <%= link_to 'Modify This Booking', edit_booking_path(@booking), class:"btn btn-info" %>
   </div>
 </div>

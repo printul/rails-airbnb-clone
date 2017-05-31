@@ -1,0 +1,11 @@
+<div class="row text-center">
+  <h1>My Vendor Bookings</h1>
+  <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
+        <div class="card-category"><%= booking[0].service.name %></div>
+          <%= link_to '', vendor_booking_path(booking[0]), class: "card-link" %>
+      </div>
+    </div>
+  <% end %>
+</div>

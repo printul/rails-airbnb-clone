@@ -1,0 +1,3 @@
+<%= render 'vendor/bookings/form', url: vendor_booking_path(@booking), method: :patch, service: @service, booking: @booking %>
+<%= link_to "Back to the Booking", vendor_bookings_path(@booking) %>
+<%= link_to "Back to my bookings list", vendor_bookings_path %>

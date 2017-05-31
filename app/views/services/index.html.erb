@@ -6,8 +6,9 @@
         <div class="product">
           <img src="https://unsplash.it/150/100?random" atl="" class="product-image"></img>
           <div class="product-description">
-            <h3><%= link_to service.name, service_path(service) %></h3>
+            <h3><%= link_to service.name, service_path(service)%></h3>
             <p><%= service.description %></p>
+            <h4>£<%= number_with_precision(service.daily_rate, precision: 2) %> per day</h4>
           </div>
           <ul class="list-inline product-controls">
             <li>
