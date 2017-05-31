@@ -1,9 +1,40 @@
-<p><%= @booking.service.name %></p>
-<p><%= @booking.service.description %></p>
-<p><%= @booking.service.daily_rate %></p>
-<p><%= @booking.start_date %></p>
-<p><%= @booking.end_date %></p></p>
-<p><%= @booking.total_cost %></p>
-<p><%= link_to 'Edit', edit_booking_path(@booking) %></p>
+<div class="container">
+  <div class="text-center">
+    <h2><%= @booking.service.name %></h2>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs12 col-sm-6">
+        <h3>Booking Status: <%= @booking.order_status %></h3>
+          <ul class="list-unstyled">
+            <li>Category: <%= @booking.service.category %></li>
+            <li>Booking Start Date: <%= @booking.start_date %></li>
+            <li>Booking End Date: <%= @booking.end_date %></li>
+            <li>Daily Rate: £<%= @booking.service.daily_rate %></li>
+            <li>Days: <%= (@booking.end_date - @booking.start_date + 1).to_i %></li>
+            <li>Total: £<%= @booking.total_cost %></li>
+          </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+      <h3>Vendor Details:</h3>
+        <ul class="list-unstyled">
+          <li>
+            <%= @booking.service.user.first_name %>
+            <%= @booking.service.user.last_name %>
+          </li>
+          <li><%= @booking.service.user.email %></li>
+          <li><%= @booking.service.user.phone_number %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center">
+    <%= link_to 'View all my bookings', bookings_path, class:"btn btn-primary" %>
+    <%= link_to 'Modify This Booking', edit_booking_path(@booking), class:"btn btn-info" %>
+  </div>
+</div>
+
+
 
 
