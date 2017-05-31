@@ -5,25 +5,25 @@
 </div>
 
 <div class="container">
-<% @services.each do |service| %>
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/201/300/?random');">
-      <div class='product-body'>
-        <h3><%= service.name %> </h3>
-        <p><%= service.description %></p>
-        <p><%= service.category %></p>
+    <% @services.each do |service| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/201/300/?random');">
+        <div class='product-body'>
+          <h3><%= service.name %> </h3>
+          <p><%= service.description %></p>
+          <p><%= service.category %></p>
+        </div>
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+          <li><a href=""><i class="fa fa-heart"></i></a></li>
+          <li><a href=""><i class="fa fa-share"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+        </ul>
+        <%= link_to "", vendor_service_path(service), class: "card-link" %>
+        </div>
       </div>
-      <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li><a href=""><i class="fa fa-heart"></i></a></li>
-        <li><a href=""><i class="fa fa-share"></i></a></li>
-        <li><a href=""><i class="fa fa-star"></i></a></li>
-      </ul>
-      <%= link_to "", vendor_service_path(service), class: "card-link" %>
-    </div>
+    <% end %>
   </div>
-  </div>
-  <% end %>
 </div>
 
 
