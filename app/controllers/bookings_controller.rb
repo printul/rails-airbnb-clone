@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update, :show]
-  before_action :set_service, only: [:new, :create, :update]
+  before_action :set_service, only: [:new, :create]
 
   def index
     @bookings = current_user.bookings
@@ -17,6 +17,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.service = @service
     @booking.user = current_user
+    # calculating total cost as dates booked * daily rate
+    days_booked = (@booking.end_date - @booking.start_date).to_i
+    @booking.total_cost = days_booked * @booking.service.daily_rate
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -28,7 +31,11 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking)
+    else
+      render 'bookings/edit'
+    end
   end
 
   private
@@ -42,7 +49,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_cost, :order_status)
+    params.require(:booking).permit(:start_date, :end_date, :order_status)
   end
 
 end

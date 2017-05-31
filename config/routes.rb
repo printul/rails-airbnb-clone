@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
 
   resources :services, only: [:index, :show] do
-    resources :bookings, only: [:new, :create, :edit, :update]
+    resources :bookings, only: [:new, :create]
   end
 
-resources :bookings, only: [:index, :show]
+resources :bookings, only: [:index, :show, :update, :edit]
 
     namespace :vendor do
       resources :services, only: [:new, :create, :index, :show, :edit, :update] do
