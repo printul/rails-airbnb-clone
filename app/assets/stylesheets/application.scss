@@ -20,3 +20,7 @@ body {
   color: $gray;
   height: 100vh;
 }
+
+#content {
+  min-height: calc(100vh - 70px - 110px);
+}
