@@ -1,11 +1,39 @@
-<div class="row text-center">
-  <h1>My Vendor Bookings</h1>
-  <% @bookings.each do |booking| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?random');">
-        <div class="card-category"><%= booking.service.name %></div>
-          <%= link_to '', vendor_booking_path(booking), class: "card-link" %>
+<div class="container">
+  <h1 class="text-center">My Vendor Bookings</h1>
+  <div class="flex-box-end">
+    <p>Sort By:</p>
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Booking ID
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Booking ID</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Start Date</a></li>
+          <li><a href="#">End Date</a></li>
+          <li><a href="#">Status</a></li>
+        </ul>
       </div>
-    </div>
-  <% end %>
+  </div>
+  <div class="flex-box-centered">
+    <table>
+      <tr>
+        <th class="text-center">Booking ID</th>
+        <th class="text-center">Service</th>
+        <th class="text-center">Start Date</th>
+        <th class="text-center">End Date</th>
+        <th class="text-center">Status</th>
+      </tr>
+      <% @bookings.each do |booking| %>
+        <tr class="trLink">
+          <td class="text-center"><%= link_to booking.id, vendor_booking_path(booking) %></td>
+          <td><%= link_to booking.service.name, vendor_booking_path(booking) %></td>
+          <td><%= link_to booking.start_date, vendor_booking_path(booking) %></td>
+          <td><%= link_to booking.end_date, vendor_booking_path(booking) %></td>
+          <td class="text-center"><%= link_to booking.order_status, vendor_booking_path(booking) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
