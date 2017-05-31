@@ -1,29 +1,23 @@
 <div class="container">
   <h1 class="text-center">My Vendor Bookings</h1>
   <div class="flex-box-end">
-    <p>Sort By:</p>
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Booking ID
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">Booking ID</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Start Date</a></li>
-          <li><a href="#">End Date</a></li>
-          <li><a href="#">Status</a></li>
-        </ul>
-      </div>
+    <p>Filter By:</p>
+    <select name="filter">
+      <option value="none">None</option>
+      <option value="pending">Pending</option>
+      <option value="accepted">Accepted</option>
+      <option value="declined">Declined</option>
+      <option value="declined">Awaiting Payment</option>
+    </select>
   </div>
   <div class="flex-box-centered">
-    <table>
+    <table id="vendorBookingsTable">
       <tr>
-        <th class="text-center">Booking ID</th>
-        <th class="text-center">Service</th>
-        <th class="text-center">Start Date</th>
-        <th class="text-center">End Date</th>
-        <th class="text-center">Status</th>
+        <th class="text-center" onclick="sortTable(0)">Booking ID</th>
+        <th class="text-center" onclick="sortTable(1)">Service</th>
+        <th class="text-center" onclick="sortTable(2)">Start Date</th>
+        <th class="text-center" onclick="sortTable(3)">End Date</th>
+        <th class="text-center" onclick="sortTable(4)">Status</th>
       </tr>
       <% @bookings.each do |booking| %>
         <tr class="trLink">
@@ -37,3 +31,60 @@
     </table>
   </div>
 </div>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("vendorBookingsTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc";
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = $("tr");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("a")[n];
+      y = rows[i + 1].getElementsByTagName("a")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
