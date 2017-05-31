@@ -1,3 +1,9 @@
-<h1><%= @service.name %></h1>
-<%= link_to "Book me!", new_service_booking_path(@service), class: "btn btn-success" %>
-<%= link_to "Back to the services", services_path, class: "btn btn-info" %>
+<div class="container padded">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h1><%= @service.name %></h1>
+      <%= link_to "Book me!", new_service_booking_path(@service), class: "btn btn-success" %>
+      <%= link_to "Back to the services", services_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
