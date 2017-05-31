@@ -32,6 +32,9 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
+      days_booked = (@booking.end_date - @booking.start_date).to_i
+      @booking.total_cost = days_booked * @booking.service.daily_rate
+      @booking.save
       redirect_to booking_path(@booking)
     else
       render 'bookings/edit'
