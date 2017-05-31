@@ -3,6 +3,7 @@
 <p><%= @booking.service.daily_rate %></p>
 <p><%= @booking.start_date %></p>
 <p><%= @booking.end_date %></p></p>
-<p><%= link_to 'Edit', edit_service_booking_path(@booking) %></p>
+<p><%= @booking.total_cost %></p>
+<p><%= link_to 'Edit', edit_booking_path(@booking) %></p>
 
 
