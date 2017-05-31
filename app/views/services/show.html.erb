@@ -1,4 +1,3 @@
 <h1><%= @service.name %></h1>
-<p><%= link_to "Book me!", new_service_booking_path(@service), class: "btn btn-success" %></p>
+<%= link_to "Book me!", new_service_booking_path(@service), class: "btn btn-success" %>
 <%= link_to "Back to the services", services_path, class: "btn btn-info" %>
-
