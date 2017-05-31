@@ -1,27 +1,33 @@
-
+<h1 class="text-center">List of services</h1>
 <div class="container">
   <div class="row">
-    <h1>Browse Services</h1>
-    <% @services.each do |service| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= "https://unsplash.it/200/300/?random"%>);">
-          <div class='product-body'>
+    <div class="sm-col-4 sm-col-offset-4">
+      <% @services.each do |service| %>
+        <div class="product">
+          <img src="https://unsplash.it/150/100?random" atl="" class="product-image"></img>
+          <div class="product-description">
             <h3><%= service.name %></h3>
             <p><%= service.description %></p>
-            <p><%= service.category %></p>
           </div>
-          <ul class="list-inline product-controls hidden-sm hidden-xs">
-            <li><a href=""><i class="fa fa-heart"></i></a></li>
-            <li><a href=""><i class="fa fa-share"></i></a></li>
-            <li><a href=""><i class="fa fa-star"></i></a></li>
+          <ul class="list-inline product-controls">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-heart"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-share"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-star"></i>
+              <% end %>
+            </li>
           </ul>
-          <%= link_to "", service_path(service), class: "card-link" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-
-
