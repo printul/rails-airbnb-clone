@@ -1,15 +1,10 @@
-<div class="container padded text-center">
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-      <%= simple_form_for [@service, @booking] do |f| %>
-        <%= f.input :start_date, as: :string, input_html: { class: "datepicker start", value: start_date } %>
-        <%= f.input :end_date, as: :string, input_html: { class: "datepicker end", value: end_date } %>
-        <%= f.input :order_status, collection: ["Pending", "Awaiting Payment", "Completed", "Declined", "Accepted"] %>
-        <%= f.submit class: "btn btn-warning"%>
-      <% end %>
-    </div>
-  </div>
-</div>
+<div class= "text-center">
+<%= simple_form_for [@service, @booking] do |f| %>
+  <%= f.input :start_date, as: :string, input_html: { class: "datepicker start", value: start_date } %>
+  <%= f.input :end_date, as: :string, input_html: { class: "datepicker end", value: end_date } %>
+  <%= f.input :order_status, collection: ["Pending", "Awaiting Payment", "Completed", "Declined", "Accepted"] %>
+  <%= f.submit class: "btn btn-warning" %>
+<% end %>
 
 <%# start_d = @booking.start_date.to_s.gsub('-', '/').reverse %>
 <%= content_for(:after_js) do %>
@@ -23,3 +18,4 @@
   // $(".end").datepicker("setDate", "")
   </script>
 <% end %>
+</div>
