@@ -52,7 +52,7 @@ service_seed_data = [
                         description: "Say good-bye to reality, you'll move and look like a movie star",
                         daily_rate: 333.0,
                         user_id: 3,
-                        category: SERVICE_CATEGORIES[2],
+                        category: SERVICE_CATEGORIES[0],
                         photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329733/helicopter_okveor.jpg'
                       },
 
@@ -79,8 +79,8 @@ ORDER_STATUSES = ["Pending", "Awaiting Payment", "Completed", "Declined", "Accep
 
 booking_seed_data = [
                       {
-                        service: Service.first,
-                        user: User.first,
+                        service_id: 1,
+                        user_id: 2,
                         start_date: DateTime.new(2017, 6, 1),
                         end_date: DateTime.new(2017, 6, 10),
                         total_cost: 270.0,
@@ -89,8 +89,8 @@ booking_seed_data = [
                       },
 
                       {
-                        service: Service.last,
-                        user: User.first,
+                        service_id: 2,
+                        user_id: 2,
                         start_date: DateTime.new(2017, 6, 3),
                         end_date: DateTime.new(2017, 6, 5),
                         total_cost: 666.0,
@@ -99,8 +99,8 @@ booking_seed_data = [
                       },
 
                       {
-                        service: Service.last,
-                        user: User.first,
+                        service_id: 3,
+                        user_id: 2,
                         start_date: DateTime.new(2017, 7, 1),
                         end_date: DateTime.new(2017, 7, 10),
                         total_cost: 18000.0,
