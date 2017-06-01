@@ -1,0 +1,20 @@
+tr.trLink {
+    cursor: pointer;
+}
+tr.trLink:hover {
+   background-color: grey;
+}
+
+tr.trLink a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+tr.trLink:hover a{
+}
+
+th {
+  padding: 20px;
+}

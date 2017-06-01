@@ -12,7 +12,13 @@ class User < ApplicationRecord
 
   def my_vendor_bookings
     @user = User.find(id)
-    return @user.services.map { |service| service.bookings }
+    @bookings = []
+    @user.services.each do |service|
+      service.bookings.each do |booking|
+        @bookings << booking
+      end
+    end
+    return @bookings
   end
 
   def self.find_for_facebook_oauth(auth)
