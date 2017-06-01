@@ -7,7 +7,7 @@
 
 <%#= link_to "Cancel this booking", cancel_booking_path(@booking), method: :patch, class: "btn btn-warning" %>
 
-<%= link_to "Cancel this booking", booking_path(@booking, booking: { order_status: "Cancelled" }), method: :patch, class: "btn btn-warning" %>
+<%#= link_to "Cancel this booking", booking_path(@booking, booking: { order_status: "Cancelled" }), method: :patch, class: "btn btn-warning" %>
 
 <%# start_d = @booking.start_date.to_s.gsub('-', '/').reverse %>
 <%= content_for(:after_js) do %>
