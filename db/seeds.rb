@@ -42,7 +42,7 @@ service_seed_data = [
                         name: "Professional Edit Co",
                         description: "World class editing for amateur filmed creations",
                         daily_rate: 30.0,
-                        user: User.first,
+                        user_id: 1,
                         category: SERVICE_CATEGORIES[1],
                         photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg'
                       },
@@ -51,7 +51,7 @@ service_seed_data = [
                         name: "Hollywood-style Filming",
                         description: "Say good-bye to reality, you'll move and look like a movie star",
                         daily_rate: 333.0,
-                        user: User.first,
+                        user_id: 3,
                         category: SERVICE_CATEGORIES[2],
                         photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329733/helicopter_okveor.jpg'
                       },
@@ -60,7 +60,7 @@ service_seed_data = [
                         name: "Creative Studios",
                         description: "Full front-end processing, on-site professionals to film with dedicated post-production team",
                         daily_rate: 2000.0,
-                        user: User.last,
+                        user_id: 1,
                         category: SERVICE_CATEGORIES[2],
                         photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg'
                       },
@@ -69,7 +69,7 @@ service_seed_data = [
                         name: "Snipet style focused filming",
                         description: "Focused on individual, focuses on bringing out persona",
                         daily_rate: 45.0,
-                        user: User.last,
+                        user_id: 3,
                         category: SERVICE_CATEGORIES[1],
                         photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg'
                       }
