@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.service = @service
     @booking.user = current_user
+    #parsing data input from string to date
     # calculating total cost as dates booked * daily rate
     days_booked = (@booking.end_date - @booking.start_date).to_i
     @booking.total_cost = days_booked * @booking.service.daily_rate
