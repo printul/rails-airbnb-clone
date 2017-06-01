@@ -3,7 +3,9 @@
 # creates 3 bookings with customer user id: 2,
 # for each service of vendor user id: 1
 
-
+Booking.destroy_all
+Service.destroy_all
+User.destroy_all
 
 user_seed_data = [
                   { email: 'vendor@gmail.com',
@@ -41,31 +43,35 @@ service_seed_data = [
                         description: "World class editing for amateur filmed creations",
                         daily_rate: 30.0,
                         user_id: 1,
-                        category: SERVICE_CATEGORIES[1]
+                        category: SERVICE_CATEGORIES[1],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg'
                       },
 
                       {
                         name: "Hollywood-style Filming",
                         description: "Say good-bye to reality, you'll move and look like a movie star",
                         daily_rate: 333.0,
-                        user_id: 1,
-                        category: SERVICE_CATEGORIES[2]
+                        user_id: 3,
+                        category: SERVICE_CATEGORIES[0],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329733/helicopter_okveor.jpg'
                       },
 
                       {
                         name: "Creative Studios",
                         description: "Full front-end processing, on-site professionals to film with dedicated post-production team",
                         daily_rate: 2000.0,
-                        user_id: 3,
-                        category: SERVICE_CATEGORIES[2]
+                        user_id: 1,
+                        category: SERVICE_CATEGORIES[2],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg'
                       },
 
                       {
-                        name: "Snipet style focused filming",
+                        name: "Snippet style focused filming",
                         description: "Focused on individual, focuses on bringing out persona",
                         daily_rate: 45.0,
                         user_id: 3,
-                        category: SERVICE_CATEGORIES[1]
+                        category: SERVICE_CATEGORIES[1],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg'
                       }
                     ]
 
@@ -104,6 +110,9 @@ booking_seed_data = [
                     ]
 
 user_seed_data.each { |user_info| User.create(user_info)}
-service_seed_data.each { |service_info| Service.create(service_info) }
+service_seed_data.each do |service_info|
+  s = Service.create!(service_info.except(:photo_url))
+  s.photo_url = service_info[:photo_url]
+end
 booking_seed_data.each { |booking_info| Booking.create(booking_info) }
 

@@ -5,7 +5,7 @@
         <% @services.each do |service| %>
             <%= link_to service_path(service), class: 'product-card-link' do %>
               <div class="product">
-                <img src="https://unsplash.it/100/80?random" atl="" class="product-image"></img>
+                <%= cl_image_tag service.photo.path, height: 80, class: "product-image" %>
                 <div class="product-description">
                   <h3><%= service.name %></h3>
                   <p><%= service.description %></p>
@@ -21,3 +21,7 @@
       </div>
     </div>
 </div>
+
+
+
+

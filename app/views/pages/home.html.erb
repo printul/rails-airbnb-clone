@@ -5,19 +5,19 @@
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path('film_editing') %>');">
           <div class="card-category">Video Editing</div>
-            <%= link_to '', services_path(:category=>"Editing"), class: "card-link" %>
+            <%= link_to '', services_path(category: "Editing"), class: "card-link" %>
         </div>
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path('camera.jpg') %>');">
           <div class="card-category">Filming</div>
-            <%= link_to '', services_path(:category=>"Filming"), class: "card-link" %>
+            <%= link_to '', services_path(category: "Filming"), class: "card-link" %>
         </div>
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path('full_services.jpg') %>');">
           <div class="card-category">Full Services</div>
-            <%= link_to '', services_path(:category=>"Both"), class: "card-link" %>
+            <%= link_to '', services_path(category: "Both"), class: "card-link" %>
         </div>
     </div>
   </div>

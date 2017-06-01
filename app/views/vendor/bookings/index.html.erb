@@ -1,31 +1,30 @@
 <div class="container">
   <h1 class="text-center">My Vendor Bookings</h1>
   <div class="flex-box-end">
-    <p>Filter Status:</p>
-    <select name="filter" id="bookingsSelector">
+    <h4>Filter Status:</h4>
+    <select name="filter" class="filterStatus" id="tableFilterSelector">
       <option value="None">None</option>
-      <option value="Pending">Pending</option>
-      <option value="Accepted">Accepted</option>
-      <option value="Declined">Declined</option>
-      <option value="Awaiting Payment">Awaiting Payment</option>
+      <% Booking::ORDER_STATUSES.each do |status|  %>
+        <option value="<%= status %> "><%= status %></option>
+      <% end %>
     </select>
   </div>
   <div class="flex-box-centered">
     <table id="vendorBookingsTable">
       <tr>
-        <th class="text-center" onclick="sortTable(0)">Booking ID</th>
-        <th class="text-center" onclick="sortTable(1)">Service</th>
-        <th class="text-center" onclick="sortTable(2)">Start Date</th>
-        <th class="text-center" onclick="sortTable(3)">End Date</th>
-        <th class="text-center" onclick="sortTable(4)">Status</th>
+        <th class="text-center" onclick="sortTable(0)">Booking #</th>
+        <th class="text-center" onclick="sortTable(1)">Status</th>
+        <th class="text-center" onclick="sortTable(2)">Service</th>
+        <th class="text-center" onclick="sortTable(3)">Start Date</th>
+        <th class="text-center" onclick="sortTable(4)">End Date</th>
       </tr>
       <% @bookings.each do |booking| %>
         <tr class="trLink">
           <td class="text-center"><%= link_to booking.id, vendor_booking_path(booking) %></td>
+          <td class="text-center"><%= link_to booking.order_status, vendor_booking_path(booking) %></td>
           <td><%= link_to booking.service.name, vendor_booking_path(booking) %></td>
           <td><%= link_to booking.start_date, vendor_booking_path(booking) %></td>
           <td><%= link_to booking.end_date, vendor_booking_path(booking) %></td>
-          <td class="text-center"><%= link_to booking.order_status, vendor_booking_path(booking) %></td>
         </tr>
       <% end %>
     </table>

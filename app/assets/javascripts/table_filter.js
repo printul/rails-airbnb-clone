@@ -1,11 +1,11 @@
 
-$('#bookingsSelector').on('change', function() {
+$('#tableFilterSelector').on('change', function() {
   $('tr').show();
-  if ($('#bookingsSelector')[0].value !== "None") {
+  if ($('#tableFilterSelector')[0].value !== "None") {
     var arrToHide = [];
-    $('tr td:last-child a').each(function(index) {
-      var status = $(this)[0].text;
-      var filter = $('#bookingsSelector')[0].value;
+    $('tr td:nth-child(2) a').each(function(index) {
+      var status = $(this)[0].text.trim();
+      var filter = $('#tableFilterSelector')[0].value.trim();
       if(status !== filter) {
         arrToHide.push(index + 1);
       }
