@@ -77,8 +77,9 @@ booking_seed_data = [
                         user_id: 2,
                         start_date: DateTime.new(2017, 6, 1),
                         end_date: DateTime.new(2017, 6, 10),
-                        total_cost: 30.0,
-                        order_status: ORDER_STATUSES[2]
+                        total_cost: 270.0,
+                        order_status: ORDER_STATUSES[2],
+                        note: "Please call me back so we can arrange a meeting time"
                       },
 
                       {
@@ -86,8 +87,9 @@ booking_seed_data = [
                         user_id: 2,
                         start_date: DateTime.new(2017, 6, 3),
                         end_date: DateTime.new(2017, 6, 5),
-                        total_cost: 200.0,
-                        order_status: ORDER_STATUSES[2]
+                        total_cost: 666.0,
+                        order_status: ORDER_STATUSES[2],
+                        note: "I'm having issues with my payment, please contact me via email"
                       },
 
                       {
@@ -95,8 +97,9 @@ booking_seed_data = [
                         user_id: 2,
                         start_date: DateTime.new(2017, 7, 1),
                         end_date: DateTime.new(2017, 7, 10),
-                        total_cost: 5000.0,
-                        order_status: ORDER_STATUSES[2]
+                        total_cost: 18000.0,
+                        order_status: ORDER_STATUSES[2],
+                        note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum et nisi vitae rutrum. Quisque a augue imperdiet, ullamcorper turpis et, fringilla purus. Fusce ut faucibus erat. Vestibulum sed massa in libero ultrices malesuada ut nec diam. Praesent posuere faucibus molestie. Vestibulum ac elit nec ligula varius pulvinar et ut ipsum. Fusce pharetra vel nunc ac laoreet."
                       }
                     ]
 
