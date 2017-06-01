@@ -66,7 +66,7 @@ service_seed_data = [
                       },
 
                       {
-                        name: "Snipet style focused filming",
+                        name: "Snippet style focused filming",
                         description: "Focused on individual, focuses on bringing out persona",
                         daily_rate: 45.0,
                         user_id: 3,
