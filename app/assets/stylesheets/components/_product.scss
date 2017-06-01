@@ -3,7 +3,14 @@
   align-items: center;
   margin-bottom: 5px;
   padding: 10px;
+  font-size: 15px;
+  color: $gray;
 }
+
+.product-card-link:hover {
+  text-decoration: none;
+}
+
 
 .product:hover{
   background: #E6E6E6;
@@ -27,9 +34,8 @@
   padding: 10px;
 }
 
-.product-controls a{
-  font-size: 20px;
-  color: #CCCCCC;
+.product-controls h4{
+  font-size: 17px;
 }
 
 .product-image{
