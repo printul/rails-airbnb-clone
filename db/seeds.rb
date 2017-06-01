@@ -3,7 +3,9 @@
 # creates 3 bookings with customer user id: 2,
 # for each service of vendor user id: 1
 
-
+Booking.destroy_all
+Service.destroy_all
+User.destroy_all
 
 user_seed_data = [
                   { email: 'vendor@gmail.com',
@@ -40,32 +42,36 @@ service_seed_data = [
                         name: "Professional Edit Co",
                         description: "World class editing for amateur filmed creations",
                         daily_rate: 30.0,
-                        user_id: 1,
-                        category: SERVICE_CATEGORIES[1]
+                        user: User.first,
+                        category: SERVICE_CATEGORIES[1],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg'
                       },
 
                       {
                         name: "Hollywood-style Filming",
                         description: "Say good-bye to reality, you'll move and look like a movie star",
                         daily_rate: 333.0,
-                        user_id: 1,
-                        category: SERVICE_CATEGORIES[2]
+                        user: User.first,
+                        category: SERVICE_CATEGORIES[2],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329733/helicopter_okveor.jpg'
                       },
 
                       {
                         name: "Creative Studios",
                         description: "Full front-end processing, on-site professionals to film with dedicated post-production team",
                         daily_rate: 2000.0,
-                        user_id: 3,
-                        category: SERVICE_CATEGORIES[2]
+                        user: User.last,
+                        category: SERVICE_CATEGORIES[2],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg'
                       },
 
                       {
                         name: "Snipet style focused filming",
                         description: "Focused on individual, focuses on bringing out persona",
                         daily_rate: 45.0,
-                        user_id: 3,
-                        category: SERVICE_CATEGORIES[1]
+                        user: User.last,
+                        category: SERVICE_CATEGORIES[1],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg'
                       }
                     ]
 
@@ -73,8 +79,8 @@ ORDER_STATUSES = ["Pending", "Awaiting Payment", "Completed", "Declined", "Accep
 
 booking_seed_data = [
                       {
-                        service_id: 1,
-                        user_id: 2,
+                        service: Service.first,
+                        user: User.first,
                         start_date: DateTime.new(2017, 6, 1),
                         end_date: DateTime.new(2017, 6, 10),
                         total_cost: 270.0,
@@ -83,8 +89,8 @@ booking_seed_data = [
                       },
 
                       {
-                        service_id: 2,
-                        user_id: 2,
+                        service: Service.last,
+                        user: User.first,
                         start_date: DateTime.new(2017, 6, 3),
                         end_date: DateTime.new(2017, 6, 5),
                         total_cost: 666.0,
@@ -93,8 +99,8 @@ booking_seed_data = [
                       },
 
                       {
-                        service_id: 3,
-                        user_id: 2,
+                        service: Service.last,
+                        user: User.first,
                         start_date: DateTime.new(2017, 7, 1),
                         end_date: DateTime.new(2017, 7, 10),
                         total_cost: 18000.0,
@@ -104,6 +110,9 @@ booking_seed_data = [
                     ]
 
 user_seed_data.each { |user_info| User.create(user_info)}
-service_seed_data.each { |service_info| Service.create(service_info) }
+service_seed_data.each do |service_info|
+  s = Service.create!(service_info.except(:photo_url))
+  s.photo_url = service_info[:photo_url]
+end
 booking_seed_data.each { |booking_info| Booking.create(booking_info) }
 
