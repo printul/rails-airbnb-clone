@@ -3,6 +3,6 @@
   <%= f.input :description %>
   <%= f.input :daily_rate %>
   <%= f.input :is_active %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: ["Filming", "Editing", "Both"], prompt: "(Select a category)" %>
   <%= f.submit %>
 <% end %>

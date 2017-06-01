@@ -30,6 +30,11 @@
               <% end %>
             </li>
             <li>
+              <%= link_to vendor_services_path do %>
+                <i class="fa fa-camera"></i> <%= t(".profile", default: "My vendor services") %>
+              <% end %>
+            </li>
+            <li>
               <%= link_to bookings_path do %>
                 <i class="fa fa-book"></i>  <%= t(".profile", default: "My Bookings") %>
               <% end %>
