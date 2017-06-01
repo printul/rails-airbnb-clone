@@ -22,6 +22,7 @@ gem 'cloudinary', '1.1.0'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+gem 'rails-i18n'
 
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'

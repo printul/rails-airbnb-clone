@@ -7,6 +7,3 @@
 //= require attachinary
 //= require_tree .
 
-$(document).on("ready", function(){
-  $(".datepicker").datepicker();
-});
