@@ -1,2 +1,2 @@
 <h1>Edit booking</h1>
-<%= render 'form' %>
+<%= render 'form', start_date: I18n.localize(@booking.start_date), end_date: I18n.localize(@booking.end_date) %>

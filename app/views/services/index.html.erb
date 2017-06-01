@@ -1,34 +1,23 @@
 <h1 class="text-center">List of services</h1>
 <div class="container">
-  <div class="row">
-    <div class="sm-col-4 sm-col-offset-4">
-      <% @services.each do |service| %>
-        <div class="product">
-          <img src="https://unsplash.it/150/100?random" atl="" class="product-image"></img>
-          <div class="product-description">
-            <h3><%= link_to service.name, service_path(service)%></h3>
-            <p><%= service.description %></p>
-            <h4>£<%= number_with_precision(service.daily_rate, precision: 2) %> per day</h4>
-          </div>
-          <ul class="list-inline product-controls">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-heart"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-share"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-star"></i>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      <% end %>
+    <div class="row">
+      <div class="sm-col-4 sm-col-offset-4">
+        <% @services.each do |service| %>
+            <%= link_to service_path(service), class: 'product-card-link' do %>
+              <div class="product">
+                <img src="https://unsplash.it/100/80?random" atl="" class="product-image"></img>
+                <div class="product-description">
+                  <h3><%= service.name %></h3>
+                  <p><%= service.description %></p>
+                </div>
+                <ul class="list-inline product-controls">
+                  <li>
+                  <h4>£<%= number_with_precision(service.daily_rate, precision: 2) %> per day</h4>
+                  </li>
+                </ul>
+              </div>
+            <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
 </div>

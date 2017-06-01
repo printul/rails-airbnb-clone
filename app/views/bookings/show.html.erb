@@ -1,12 +1,12 @@
-<div class="container">
-  <div class="text-center">
-    <h2><%= @booking.service.name %></h2>
-  </div>
+<div class="text-center">
+  <h2><%= @booking.service.name %></h2>
+</div>
 
-  <div class="container">
+<div class="container">
+  <div class="container padded">
     <div class="row">
       <div class="col-xs12 col-sm-6">
-        <h3>Booking Status: <%= @booking.order_status %></h3>
+        <h3>Booking Details:</h3>
           <ul class="list-unstyled">
             <li>Category: <%= @booking.service.category %></li>
             <li>Booking Start Date: <%= @booking.start_date %></li>
@@ -20,16 +20,70 @@
       <h3>Vendor Details:</h3>
         <ul class="list-unstyled">
           <li>
-            <%= @booking.service.user.first_name %>
+            Name: <%= @booking.service.user.first_name %>
             <%= @booking.service.user.last_name %>
           </li>
-          <li><%= @booking.service.user.email %></li>
-          <li><%= @booking.service.user.phone_number %></li>
+          <li>Email: <%= @booking.service.user.email %></li>
+          <li>Phone: <%= @booking.service.user.phone_number %></li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="container text-center">
+
+<% case @booking.order_status %>
+<% when "Pending" %>
+  <ol class="progress-tracker">
+    <li class="step active"><a href="#" class="step-name">Pending</a></li>
+    <li class="step"><a href="#" class="step-name">Awaiting Payment</a></li>
+    <li class="step"><a href="#" class="step-name">Accepted</a></li>
+    <li class="step"><span class="step-name">In Progress</span></li>
+    <li class="step"><span class="step-name">Completed</span></li>
+  </ol>
+<% when "Awaiting Payment" %>
+  <ol class="progress-tracker">
+    <li class="step completed"><a href="#" class="step-name">Pending</a></li>
+    <li class="step active"><a href="#" class="step-name">Awaiting Payment</a></li>
+    <li class="step"><a href="#" class="step-name">Accepted</a></li>
+    <li class="step"><span class="step-name">In Progress</span></li>
+    <li class="step"><span class="step-name">Completed</span></li>
+  </ol>
+<% when "Accepted" %>
+  <ol class="progress-tracker">
+    <li class="step completed"><a href="#" class="step-name">Pending</a></li>
+    <li class="step completed"><a href="#" class="step-name">Awaiting Payment</a></li>
+    <li class="step active"><a href="#" class="step-name">Accepted</a></li>
+    <li class="step"><span class="step-name">In Progress</span></li>
+    <li class="step"><span class="step-name">Completed</span></li>
+  </ol>
+<% when "In Progress" %>
+  <ol class="progress-tracker">
+    <li class="step completed"><a href="#" class="step-name">Pending</a></li>
+    <li class="step completed"><a href="#" class="step-name">Awaiting Payment</a></li>
+    <li class="step completed"><a href="#" class="step-name">Accepted</a></li>
+    <li class="step active"><span class="step-name">In Progress</span></li>
+    <li class="step"><span class="step-name">Completed</span></li>
+  </ol>
+<% when "Completed" %>
+  <ol class="progress-tracker">
+    <li class="step completed"><a href="#" class="step-name">Pending</a></li>
+    <li class="step completed"><a href="#" class="step-name">Awaiting Payment</a></li>
+    <li class="step completed"><a href="#" class="step-name">Accepted</a></li>
+    <li class="step completed"><span class="step-name">In Progress</span></li>
+    <li class="step completed"><span class="step-name">Completed</span></li>
+  </ol>
+  <% when "Declined" %>
+    <ol class="progress-tracker">
+      <li class="step declined"><a href="#" class="step-name">Declined</a></li>
+      <li class="step"><a href="#" class="step-name">Pending</a></li>
+      <li class="step"><a href="#" class="step-name">Awaiting Payment</a></li>
+      <li class="step"><a href="#" class="step-name">Accepted</a></li>
+      <li class="step"><span class="step-name">In Progress</span></li>
+      <li class="step"><span class="step-name">Completed</span></li>
+    </ol>
+<% end %>
+
+
+  <div class="text-center padded">
     <%= link_to 'View all my bookings', bookings_path, class:"btn btn-primary" %>
     <%= link_to 'Modify This Booking', edit_booking_path(@booking), class:"btn btn-info" %>
   </div>
