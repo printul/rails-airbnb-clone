@@ -46,3 +46,5 @@
 .progress-tracker .step.active:before {background: #46c0f5;}
 .progress-tracker .step.completed:before {background: #87db55; content: "\2714"}
 .progress-tracker .step.declined:before {background: $red; content: "\2714"}
+.progress-tracker .step.cancelled:before {background: $red; content: "\2714"}
+

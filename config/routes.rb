@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-resources :bookings, only: [:index, :show, :update, :edit]
+  resources :bookings, only: [:index, :show, :update, :edit]
+  patch "bookings/:id/cancel" => "bookings#cancel", as: :cancel_booking
 
     namespace :vendor do
       resources :bookings, only: [:index, :show, :edit, :update]
