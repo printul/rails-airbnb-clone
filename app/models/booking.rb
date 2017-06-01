@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  ORDER_STATUSES = ["Pending", "Awaiting Payment", "In Progress", "Completed", "Declined", "Accepted"]
+  ORDER_STATUSES = ["Pending", "Accepted", "Awaiting Payment", "In Progress", "Completed", "Declined"]
   belongs_to :user
   belongs_to :service
   # validates :start_date, :end_date, :order_status, :total_cost, presence: true
