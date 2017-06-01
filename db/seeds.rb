@@ -3,6 +3,8 @@
 # creates 3 bookings with customer user id: 2,
 # for each service of vendor user id: 1
 
+
+
 user_seed_data = [
                   { email: 'vendor@gmail.com',
                     password: 'vendorvendor',
@@ -19,34 +21,55 @@ user_seed_data = [
                     last_name: "Mansour",
                     address: "flat 7, little street, London",
                     phone_number: "87654321"
+                  },
+
+                  {
+                    email: 'moviemaker@gmail.com',
+                    password: '123456',
+                    first_name: "John",
+                    last_name: "Galt",
+                    address: "1, Broad Avenue, London",
+                    phone_number: "87654321"
                   }
                  ]
 
+SERVICE_CATEGORIES = ["Filming", "Editing", "Both"]
+
 service_seed_data = [
                       {
-                        name: "Very Good Editing",
-                        description: "It's some good editing alright",
+                        name: "Professional Edit Co",
+                        description: "World class editing for amateur filmed creations",
                         daily_rate: 30.0,
                         user_id: 1,
-                        category: "Editing"
+                        category: SERVICE_CATEGORIES[1]
                       },
 
                       {
                         name: "Hollywood-style Filming",
-                        description: "Look like hollywood star",
+                        description: "Say good-bye to reality, you'll move and look like a movie star",
                         daily_rate: 333.0,
                         user_id: 1,
-                        category: "Filming"
+                        category: SERVICE_CATEGORIES[2]
                       },
 
                       {
-                        name: "Hollywood-style filimng with really good editing",
-                        description: "Look like hollywood star as well as make it look like movie",
-                        daily_rate: 9001.0,
-                        user_id: 1,
-                        category: "Both"
+                        name: "Creative Studios",
+                        description: "Full front-end processing, on-site professionals to film with dedicated post-production team",
+                        daily_rate: 2000.0,
+                        user_id: 3,
+                        category: SERVICE_CATEGORIES[2]
+                      },
+
+                      {
+                        name: "Snipet style focused filming",
+                        description: "Focused on individual, focuses on bringing out persona",
+                        daily_rate: 45.0,
+                        user_id: 3,
+                        category: SERVICE_CATEGORIES[1]
                       }
                     ]
+
+ORDER_STATUSES = ["Pending", "Awaiting Payment", "Completed", "Declined", "Accepted"]
 
 booking_seed_data = [
                       {
@@ -54,8 +77,8 @@ booking_seed_data = [
                         user_id: 2,
                         start_date: DateTime.new(2017, 6, 1),
                         end_date: DateTime.new(2017, 6, 10),
-                        total_cost: 300.0,
-                        order_status: "Pending"
+                        total_cost: 30.0,
+                        order_status: ORDER_STATUSES[2]
                       },
 
                       {
@@ -63,8 +86,8 @@ booking_seed_data = [
                         user_id: 2,
                         start_date: DateTime.new(2017, 6, 3),
                         end_date: DateTime.new(2017, 6, 5),
-                        total_cost: 999.0,
-                        order_status: "Awaiting Payment"
+                        total_cost: 200.0,
+                        order_status: ORDER_STATUSES[2]
                       },
 
                       {
@@ -72,8 +95,8 @@ booking_seed_data = [
                         user_id: 2,
                         start_date: DateTime.new(2017, 7, 1),
                         end_date: DateTime.new(2017, 7, 10),
-                        total_cost: 90010.0,
-                        order_status: "Declined"
+                        total_cost: 5000.0,
+                        order_status: ORDER_STATUSES[2]
                       }
                     ]
 
