@@ -5,8 +5,12 @@
       <h1><%= @service.name %></h1>
     </div>
     <div class="text-center">
-      <% @service.photos.each do |photo| %>
-        <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+      <% if @service.photos %>
+        <% @service.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+      <% else %>
+        <%= image_tag "https://unsplash.it/300/200" %>
       <% end %>
     </div>
     <div class="row">
