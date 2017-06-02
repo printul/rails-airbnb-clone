@@ -1,1 +1,9 @@
 <p><%= review.content %></p>
+
+<%= 5.times do |a| %>
+  <% if a < review.rating %>
+    <%= image_tag "honey.svg", id: "rating" %>
+  <%else%>
+    <%= image_tag "honey2.svg", id: "rating" %>
+  <%end%>
+<%end%>

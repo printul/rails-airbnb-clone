@@ -1,6 +1,6 @@
 class Vendor::ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @services = current_user.services

@@ -14,19 +14,23 @@
   </div>
 </div>
 
-
-<h2>
-  <%= pluralize @service.reviews.size, "review" %>
-</h2>
-
-<div id="reviews">
-  <% if @service.reviews.blank? %>
-    Be the first to leave a review for <%= @service.name %>
-  <% else %>
-    <% @service.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
-    <% end %>
-  <% end %>
+<div class="flex-box-centered">
+<% @sum = 0 %>
+<% @service.reviews.each do |review| %>
+  <% @sum += review.rating %>
+<% end %>
+<% average = @sum / @service.reviews.size %>
+<div class="container" id="average_rating">
+<%= link_to "Write a review", booking_path(@service), class: "btn btn-info" %>
+<h2 id="rating_title">Average ratings</h2>
+<%= 5.times do |a| %>
+  <% if a < average %>
+    <%= image_tag "honey.svg", id: "rating" %>
+  <%else%>
+    <%= image_tag "honey2.svg", id: "rating" %>
+  <%end%>
+<%end%>
+</div>
 </div>
 
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModal" aria-hidden="true">
