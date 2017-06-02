@@ -1,8 +1,10 @@
-<div class="container">
+<div class="container" id="container-title">
   <h1 class="text-center">My Vendor Bookings</h1>
+</div>
+<div class="container" id="container-white">
   <div class="flex-box-end">
     <h4>Filter Status:</h4>
-    <select name="filter" class="filterStatus" id="tableFilterSelector">
+    <select name="filter" class="selectpicker" id="tableFilterSelector">
       <option value="None">None</option>
       <% Booking::ORDER_STATUSES.each do |status|  %>
         <option value="<%= status %> "><%= status %></option>
@@ -23,8 +25,8 @@
           <td class="text-center"><%= link_to booking.id, vendor_booking_path(booking) %></td>
           <td class="text-center"><%= link_to booking.order_status, vendor_booking_path(booking) %></td>
           <td><%= link_to booking.service.name, vendor_booking_path(booking) %></td>
-          <td><%= link_to booking.start_date, vendor_booking_path(booking) %></td>
-          <td><%= link_to booking.end_date, vendor_booking_path(booking) %></td>
+          <td class="text-center"><%= link_to booking.start_date, vendor_booking_path(booking) %></td>
+          <td class="text-center"><%= link_to booking.end_date, vendor_booking_path(booking) %></td>
         </tr>
       <% end %>
     </table>
