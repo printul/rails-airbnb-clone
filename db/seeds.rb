@@ -78,7 +78,7 @@ service_seed_data = [
                         description: "Focused on individual, focuses on bringing out persona",
                         daily_rate: 45.0,
                         user_id: 3,
-                        category: SERVICE_CATEGORIES[1],
+                        category: SERVICE_CATEGORIES[0],
                         photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg']
                       },
 
@@ -87,7 +87,7 @@ service_seed_data = [
                         description: "From catwalks to video shoots, aspiring models to world class inspirers.",
                         daily_rate: 1000.0,
                         user_id: 3,
-                        category: SERVICE_CATEGORIES[1],
+                        category: SERVICE_CATEGORIES[0],
                         photo_urls: [COMPANIES_URL[:fashion]]
                       },
 
@@ -96,7 +96,7 @@ service_seed_data = [
                         description: "We love flying and we love filming people who love flying.",
                         daily_rate: 200.0,
                         user_id: 3,
-                        category: SERVICE_CATEGORIES[1],
+                        category: SERVICE_CATEGORIES[0],
                         photo_urls: [COMPANIES_URL[:flying]]
                       },
 
@@ -125,7 +125,7 @@ booking_seed_data = [
                       {
                         service_id: 1,
                         user_id: 2,
-                        start_date: DateTime.new(2017, 6, 1),
+                        start_date: DateTime.new(2017, 6, 2),
                         end_date: DateTime.new(2017, 6, 10),
                         total_cost: 270.0,
                         order_status: ORDER_STATUSES[2],
