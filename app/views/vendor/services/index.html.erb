@@ -1,3 +1,6 @@
+<div class="container", id = "vendor_link">
+  <%= link_to "Back to services", services_path, class: "btn btn-info", id: "vendor_service_services_list" %>
+</div>
 <div class="container">
   <h1 class="text-center">My Vendor Services</h1>
   <div class="flex-box-end">
@@ -29,7 +32,8 @@
     </table>
   </div>
   <div class="text-center">
-    <%= link_to "Create a new service", new_vendor_service_path(@service), class: "btn btn-primary btn-lg" %>
+    <%= link_to "Create a new service", new_vendor_service_path(@service), class: "btn btn-primary" %>
+    <%= link_to "All the bookings received", vendor_bookings_path, class: "btn btn-info" %>
   </div>
 </div>
 
