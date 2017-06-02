@@ -7,7 +7,11 @@ class Vendor::ServicesController < ApplicationController
   end
 
   def show
-
+    if @service.is_active
+      @service_active = "Active"
+    else
+      @service_active = "Deactivated"
+    end
   end
 
   def new
