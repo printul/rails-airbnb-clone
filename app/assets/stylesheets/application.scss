@@ -9,11 +9,14 @@
 @import "font-awesome";
 @import "vendor/index";
 @import "bootstrap-datepicker";
+@import "swipebox";
 
 // Your CSS
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
+@import "pages/service";
+
 
 
 
@@ -37,4 +40,45 @@ body {
 
 .simple_form {
   margin: 20px 40px;
+}
+
+#bookings_sevices_list {
+  margin-top: 10px;
+  margin-right: 1230px;
+}
+
+#service_services_list {
+  margin-top: 10px;
+  margin-right: 1230px;
+}
+
+#link {
+  margin-left: 10px;
+}
+
+strong {
+  font-size: 20px;
+}
+
+#booking_sevices_list {
+  margin-top: 10px;
+  margin-right: 1230px;
+}
+
+#vendor_service_services_list {
+  margin-top: 10px;
+  margin-right: 1230px;
+}
+
+#vendor_link {
+  margin-left: 10px;
+}
+
+#vendor_booking_services_list {
+  margin-top: 10px;
+  margin-right: 1230px;
+}
+
+#vendor_booking_link {
+  margin-left: 10px;
 }
