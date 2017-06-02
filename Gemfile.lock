@@ -6,14 +6,6 @@ GIT
       cloudinary (~> 1.1.0)
       rails (>= 3.2)
 
-GIT
-  remote: git://github.com/mrfoto/swipebox.git
-  revision: 4a1a6d08a375295ca8337e46f80e202ebc6df0be
-  specs:
-    swipebox (1.4.4)
-      rails (>= 3.1, < 6.0)
-      sass-rails (>= 3.1, < 6.0)
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -279,7 +271,6 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  swipebox!
   uglifier
 
 RUBY VERSION
