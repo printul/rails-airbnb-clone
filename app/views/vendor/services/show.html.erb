@@ -1,7 +1,15 @@
-<div class="container", id = "vendor_booking_link">
-  <%= link_to "Back to services", services_path, class: "btn btn-info", id: "vendor_booking_services_list" %>
-</div>
 <div class="container">
+  <div class="container">
+    <h2>
+        <%= link_to 'Home', root_path %>
+        >
+        Vendor
+        >
+        <%= link_to 'My Services', vendor_services_path %>
+        >
+        <u>Viewing A Service</u>
+    </h2>
+  </div>
   <div class="box">
     <div class="text-center">
       <h1><%= @service.name %></h1>

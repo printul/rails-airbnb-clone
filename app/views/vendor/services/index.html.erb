@@ -2,7 +2,15 @@
   <%= link_to "Back to services", services_path, class: "btn btn-info", id: "vendor_service_services_list" %>
 </div>
 <div class="container">
-  <h1 class="text-center">My Vendor Services</h1>
+  <div class="container">
+    <h2>
+        <%= link_to 'Home', root_path %>
+        >
+        Vendor
+        >
+        <u>My Services</u>
+    </h2>
+  </div>
   <div class="flex-box-end">
     <h4>Filter Category:</h4>
     <select name="filterCategory" id="tableFilterSelector">

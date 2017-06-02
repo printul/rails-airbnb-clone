@@ -1,3 +1,14 @@
+<div class="container">
+  <h2>
+      <%= link_to 'Home', root_path %>
+      >
+      Vendor
+      >
+      <%= link_to 'My Services', vendor_services_path %>
+      >
+      <u>Editing Service</u>
+  </h2>
+</div>
 <%= render 'vendor/services/form', url: vendor_service_path(@service), method: :patch, service: @service %>
 <%= link_to "Back to the Service", vendor_service_path(@service) %>
 <%= link_to "Back to the Service list", vendor_services_path %>
