@@ -6,8 +6,8 @@
   color: $white;
   position: relative;
   border-radius: 4px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -37,6 +37,7 @@
 #description h2 {
   font-size: 20px;
   text-align: right;
+  padding: 5px;
 }
 
 .card-description h2 {
