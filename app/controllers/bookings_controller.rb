@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:edit, :update, :show]
+  before_action :set_booking, only: [:edit, :update, :show, :cancel]
   before_action :set_service, only: [:new, :create]
 
   def index
@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -41,6 +42,13 @@ class BookingsController < ApplicationController
       render 'bookings/edit'
     end
   end
+
+  def cancel
+    @booking.order_status = "Cancelled"
+    @booking.save
+    redirect_to booking_path(@booking)
+  end
+
 
   private
 
