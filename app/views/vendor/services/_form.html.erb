@@ -1,14 +1,13 @@
-<div class="container padded">
+<div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <%= simple_form_for service, url: url, method: method do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :daily_rate %>
-        <%= f.input :category, collection: ["Filming", "Editing", "Both"], prompt: "(Select a category)" %>
-        <%= f.input :is_active %>
+        <%= f.input :name, placeholder: "Enter your service's spiffy name" %>
+        <%= f.input :description, placeholder: "(Example: This service zooms and enhances your video)" %>
+        <%= f.input :daily_rate, label: 'Daily Rate (£)', placeholder: "£10.00"%>
+        <%= f.input :category, collection: ["Filming", "Editing", "Both"], prompt: "(Please select a category)" %>
         <%= f.input :photos, as: :attachinary %>
-        <%= f.submit class: "btn btn-warning center-block" %>
+        <%= f.submit class: "btn btn-info center-block" %>
       <% end %>
     </div>
   </div>

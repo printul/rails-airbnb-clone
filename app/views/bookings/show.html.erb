@@ -1,7 +1,16 @@
-<div class="text-center">
-  <%= link_to 'Back to Services', services_path, class: "btn btn-info", :id => "booking_sevices_list" %>
-  <h2><%= @booking.service.name %></h2>
-</div>
+<div class="row" id="nav-links">
+    <div class="col-xs-12 col-xs-offset-2">
+      <h2>
+        <%= link_to 'Home', root_path %>
+        >
+        Customer
+        >
+        <%= link_to 'My Bookings', bookings_path%>
+        >
+        <u>Viewing A Booking</u>
+      </h2>
+    </div>
+  </div>
 
 <div class="container">
   <div class="container padded">
@@ -114,7 +123,7 @@
 </div>
 
   <div class="text-center padded">
-    <%= link_to 'View all my bookings', bookings_path, class:"btn btn-primary" %>
+    <%= link_to 'View all my bookings', bookings_path, class:"btn btn-info" %>
     <%= link_to 'Modify This Booking', "#", class:"btn btn-info", data: { toggle: "modal", target:"#updateModal"} %>
   </div>
 </div>

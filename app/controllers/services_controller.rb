@@ -12,5 +12,6 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
     @booking = Booking.new
     @review = Review.new
+    @user = @service.user
   end
 end

@@ -3,10 +3,10 @@
 <div class="container-fluid" id = "bottom">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path('film_editing') %>');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path('film_editing.jpg') %>');">
           <div class="card-category">Video Editing</div>
-          <div class="card-content">
-            <p>Make your video look good. Find the best top video editors on the market.</p>
+          <div class="card-description" id="description">
+            <h4>Make your video look good. Find the best top video editors on the market.</h4>
           </div>
             <%= link_to '', services_path(category: "Editing"), class: "card-link" %>
         </div>
@@ -14,8 +14,8 @@
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path('camera.jpg') %>');">
           <div class="card-category">Filming</div>
-          <div class="card-content">
-            <p>Bring your idea into reality. Find the right crew to film your project.</p>
+          <div class="card-description" id="description">
+            <h4> Bring your idea into reality. Find the right crew to film your project.</h4>
           </div>
             <%= link_to '', services_path(category: "Filming"), class: "card-link" %>
         </div>
@@ -23,8 +23,8 @@
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path('full_services.jpg') %>');">
           <div class="card-category">Full Services</div>
-          <div class="card-content">
-            <p>Integral solutions combining filming and editing from market leaders. </p>
+          <div class="card-description" id="description">
+            <h4> Integral solutions combining filming and editing from market leaders. </h4>
           </div>
             <%= link_to '', services_path(category: "Both"), class: "card-link" %>
         </div>
