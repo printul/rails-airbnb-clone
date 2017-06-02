@@ -35,7 +35,7 @@
             <h3>Change Status</h3>
               <%= simple_form_for @booking, url: vendor_booking_path, method: :patch, booking: @booking do |f| %>
                 <%= f.select :order_status, Booking::ORDER_STATUSES %>
-                <%= f.submit "Update", class: "btn btn-primary" %>
+                <%= f.submit "Update", class: "btn btn-info" %>
               <% end %>
            </div>
         </div>
@@ -78,7 +78,7 @@
       </div>
     </div>
     <div class="text-center">
-      <%= link_to 'Back to all bookings', vendor_bookings_path, class:"btn btn-primary" %>
+      <%= link_to 'Back to all bookings', vendor_bookings_path, class:"btn btn-info" %>
       <%= link_to "Back to my services", vendor_services_path, class: "btn btn-info" %>
     </div>
   </div>
