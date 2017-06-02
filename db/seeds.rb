@@ -106,7 +106,7 @@ service_seed_data = [
                         daily_rate: 3000.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[2],
-                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg']
+                        photo_urls: [COMPANIES_URL[:documentary]]
                       },
 
                       {
@@ -115,7 +115,7 @@ service_seed_data = [
                         daily_rate: 2000.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[1],
-                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg']
+                        photo_urls: [COMPANIES_URL[:surfing]]
                       },
                     ]
 
