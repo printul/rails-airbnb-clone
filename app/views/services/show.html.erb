@@ -1,3 +1,14 @@
+<div class="container" id="nav-links">
+  <h2>
+      <%= link_to 'Home', root_path %>
+      >
+      Customer
+      >
+      <%= link_to 'All Services', services_path %>
+      >
+      <u>Viewing A Service</u>
+  </h2>
+</div>
 <div class="container">
   <div class="content padded">
     <div class="images">
@@ -35,20 +46,15 @@
       <div>
         <%= link_to "Back", services_path, class: "btn btn-info" %>
       </div>
-    </div>
-  </div>
-</div>
-
-
 
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-center" id="bookingModalLabel">New booking for <%= @service.name %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        <h5 class="modal-title text-center" id="bookingModalLabel"><strong>New booking for <%= @service.name %></strong></h5>
       </div>
       <div class="modal-body">
         <%= render 'form', start_date: nil, end_date: nil %>
