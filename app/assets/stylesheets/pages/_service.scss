@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   font-weight: lighter;
-
 }
 
 .images {
@@ -13,11 +12,9 @@
   border: 1px solid #FEFEFE;
   padding: 5px;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px #FEFEFE;
 }
 
 .service {
-  box-shadow: 1px 1px 1px;
   border: 3px solid #FEFEFE;
   padding: 5px;
   display: flex;
@@ -35,7 +32,6 @@
 }
 
 .vendor {
-  box-shadow: 1px 1px 1px;
   padding: 5px;
   display: flex;
   flex-direction: column;
