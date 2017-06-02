@@ -19,3 +19,20 @@
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
 }
+
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url('http://res.cloudinary.com/printul/image/upload/v1496329732/film_camera_y85dap.jpg') no-repeat;
+    background-size: cover;
+}

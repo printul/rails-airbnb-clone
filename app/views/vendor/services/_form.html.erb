@@ -7,6 +7,7 @@
         <%= f.input :daily_rate %>
         <%= f.input :category, collection: ["Filming", "Editing", "Both"], prompt: "(Select a category)" %>
         <%= f.input :is_active %>
+        <%= f.input :photos, as: :attachinary %>
         <%= f.submit class: "btn btn-warning center-block" %>
       <% end %>
     </div>
