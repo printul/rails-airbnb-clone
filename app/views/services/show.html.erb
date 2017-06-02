@@ -9,7 +9,11 @@
         <li><%= @service.description %></li>
         <li>£<%= number_with_precision(@service.daily_rate, precision: 2) %> per day</li>
       </ul>
-      <%= link_to "Book me!", "#", class: "btn btn-success", data: { toggle: "modal", target:"#bookingModal"} %>
+      <% if current_user %>
+        <%= link_to "Book me!", "#", class: "btn btn-success", data: { toggle: "modal", target:"#bookingModal"} %>
+      <% else %>
+        <%= link_to "Book me!", new_user_session_path, class: "btn btn-success" %>
+      <% end %>
     </div>
   </div>
 </div>
