@@ -1,7 +1,7 @@
 .banner {
   color: $white;
   text-align: center;
-  height: calc(80vh - 70px);
+  height: 88vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -33,6 +33,6 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url('http://res.cloudinary.com/printul/image/upload/v1496329732/film_camera_y85dap.jpg') no-repeat;
+    background: url('') no-repeat;
     background-size: cover;
 }
