@@ -45,3 +45,20 @@
 .flex-box{
   display: flex;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: black;
+}
+
+.btn {
+  margin-bottom: 20px;
+}
+
+textarea{
+  resize: none;
+}

@@ -1,5 +1,13 @@
 <div class="container">
-
+  <div class="container">
+    <h2>
+        Vendor
+        >
+        <%= link_to 'My Bookings', vendor_bookings_path %>
+        >
+        <u>Viewing A Booking</u>
+    </h2>
+  </div>
   <div class="container">
     <h2>Booking Details</h2>
     <p>Duration: <%= @booking.start_date %> to  <%= @booking.end_date %> | Booking # <%= @booking.id %></p>
@@ -8,7 +16,11 @@
         <div class="col-xs-12 col-sm-4">
           <h3>Service</h3>
           <p><%= @booking.service.name %></p>
-          <img src="http://www.pitivi.org/i/pitivi-icon-256.png" alt="">
+          <% if @booking.service.photos %>
+            <%= cl_image_tag @booking.service.photos.first.path, height: 200, width: 300, class: "product-image" %>
+          <% else %>
+            <%=image_tag "http://www.pitivi.org/i/pitivi-icon-256.png", width: 300, height: 200 %>
+          <% end %>
         </div>
         <div class="col-xs-12 col-sm-4">
           <h3>Customer Notes</h3>
