@@ -52,7 +52,7 @@ service_seed_data = [
                         daily_rate: 30.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[1],
-                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg']
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg', 'http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg', 'http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg']
                       },
 
                       {
