@@ -52,7 +52,7 @@ service_seed_data = [
                         daily_rate: 30.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[1],
-                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg'
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg']
                       },
 
                       {
@@ -61,7 +61,7 @@ service_seed_data = [
                         daily_rate: 333.0,
                         user_id: 3,
                         category: SERVICE_CATEGORIES[0],
-                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329733/helicopter_okveor.jpg'
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329733/helicopter_okveor.jpg']
                       },
 
                       {
@@ -70,7 +70,7 @@ service_seed_data = [
                         daily_rate: 2000.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[2],
-                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg'
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg']
                       },
 
                       {
@@ -79,7 +79,7 @@ service_seed_data = [
                         daily_rate: 45.0,
                         user_id: 3,
                         category: SERVICE_CATEGORIES[1],
-                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg'
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg']
                       },
 
                       {
@@ -88,7 +88,7 @@ service_seed_data = [
                         daily_rate: 1000.0,
                         user_id: 3,
                         category: SERVICE_CATEGORIES[1],
-                        photo_url: COMPANIES_URL[:fashion]
+                        photo_urls: [COMPANIES_URL[:fashion]]
                       },
 
                       {
@@ -97,7 +97,7 @@ service_seed_data = [
                         daily_rate: 200.0,
                         user_id: 3,
                         category: SERVICE_CATEGORIES[1],
-                        photo_url: COMPANIES_URL[:flying]
+                        photo_urls: [COMPANIES_URL[:flying]]
                       },
 
                       {
@@ -106,7 +106,7 @@ service_seed_data = [
                         daily_rate: 3000.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[3],
-                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg'
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg']
                       },
 
                       {
@@ -115,7 +115,7 @@ service_seed_data = [
                         daily_rate: 2000.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[1],
-                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg'
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg']
                       },
                     ]
 
@@ -155,8 +155,8 @@ booking_seed_data = [
 
 user_seed_data.each { |user_info| User.create(user_info)}
 service_seed_data.each do |service_info|
-  s = Service.create!(service_info.except(:photo_url))
-  s.photo_url = service_info[:photo_url]
+  s = Service.create!(service_info.except(:photo_urls))
+  s.photo_urls = service_info[:photo_urls]
 end
 booking_seed_data.each { |booking_info| Booking.create(booking_info) }
 
