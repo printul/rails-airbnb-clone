@@ -29,7 +29,7 @@
         <p>£<%= number_with_precision(@service.daily_rate, precision: 2) %> per day</p>
       </div>
       <div>
-        <%= link_to "Book me!", "#", class: "btn btn-success", data: { toggle: "modal", target:"#bookingModal"} %>
+        <%= link_to "Book me!", "#", class: "btn btn-info", data: { toggle: "modal", target:"#bookingModal"} %>
       </div>
     </div>
     <div class="vendor">
@@ -41,7 +41,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container text-center">
     <div class="actions">
       <div>
         <%= link_to "Back", services_path, class: "btn btn-info" %>
