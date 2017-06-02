@@ -64,5 +64,14 @@ textarea{
 }
 
 #nav-links h2{
-  font-size: 20px;
+  font-size: 16px;
+  color: $light-gray;
+}
+
+#nav-links a{
+  color: $light-gray;
+}
+
+#nav-links a:hover{
+  color: $brand-color;
 }
