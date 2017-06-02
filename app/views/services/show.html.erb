@@ -9,22 +9,43 @@
       <u>Viewing A Service</u>
   </h2>
 </div>
-<div class="container padded">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <h1><%= @service.name %></h1>
-      <ul class="list-unstyled">
-        <li><%= @service.description %></li>
-        <li>£<%= number_with_precision(@service.daily_rate, precision: 2) %> per day</li>
-      </ul>
-      <% if current_user %>
-        <%= link_to "Book me!", "#", class: "btn btn-success", data: { toggle: "modal", target:"#bookingModal"} %>
+<div class="container">
+  <div class="content padded">
+    <div class="images">
+      <% if @service.photos %>
+        <% @service.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width:200, height: 150, crop: :fill %>
+        <% end %>
       <% else %>
-        <%= link_to "Book me!", new_user_session_path, class: "btn btn-success" %>
+        <%= image_tag "https://unsplash.it/300/200" %>
       <% end %>
     </div>
+    <div class="service">
+      <div>
+        <h3><%= @service.name %></h3>
+      </div>
+      <div>
+        <p class="text-left"><%= @service.description %></p>
+        <p>£<%= number_with_precision(@service.daily_rate, precision: 2) %> per day</p>
+      </div>
+      <div>
+        <%= link_to "Book me!", "#", class: "btn btn-success", data: { toggle: "modal", target:"#bookingModal"} %>
+      </div>
+    </div>
+    <div class="vendor">
+      <h3>About the Vendor</h3>
+      <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+      <h5><%= @user.address %></h5>
+      <h6><%= @user.phone_number %></h6>
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=350x250&sensor=false&maptype=roadmap&markers=color:red|#{@user.address}" %>
+    </div>
   </div>
-</div>
+
+  <div class="container">
+    <div class="actions">
+      <div>
+        <%= link_to "Back", services_path, class: "btn btn-info" %>
+      </div>
 
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
