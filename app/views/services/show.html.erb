@@ -1,3 +1,6 @@
+<div class="container", id = "link">
+  <%= link_to "Back to the services", services_path, class: "btn btn-info", id: "service_services_list" %>
+</div>
 <div class="container padded">
   <div class="row">
     <div class="col-xs-12 text-center">
@@ -7,8 +10,6 @@
         <li>£<%= number_with_precision(@service.daily_rate, precision: 2) %> per day</li>
       </ul>
       <%= link_to "Book me!", "#", class: "btn btn-success", data: { toggle: "modal", target:"#bookingModal"} %>
-
-      <%= link_to "Back to the services", services_path, class: "btn btn-info" %>
     </div>
   </div>
 </div>
