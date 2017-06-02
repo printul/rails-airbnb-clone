@@ -1,7 +1,10 @@
+<div class="container", id = "vendor_booking_link">
+  <%= link_to "Back to services", services_path, class: "btn btn-info", id: "vendor_booking_services_list" %>
+</div>
 <div class="container" id="container-title">
   <h1 class="text-center">My Vendor Bookings</h1>
 </div>
-<div class="container" id="container-white">
+<div class="container text-center" id="container-white">
   <div class="flex-box-end">
     <h4>Filter Status:</h4>
     <select name="filter" class="selectpicker" id="tableFilterSelector">
@@ -31,6 +34,7 @@
       <% end %>
     </table>
   </div>
+  <%= link_to "Back to my services", vendor_services_path, class: "btn btn-info" %>
 </div>
 
 <script>
