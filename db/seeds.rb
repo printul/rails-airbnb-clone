@@ -52,7 +52,7 @@ service_seed_data = [
                         daily_rate: 30.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[1],
-                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg', 'http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg', 'http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg']
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496331226/editphotodesk_ysteoh.jpg', 'http://res.cloudinary.com/printul/image/upload/v1496414253/nightsky_qtf6hw.jpg', 'http://res.cloudinary.com/printul/image/upload/v1496414252/fire-hell-inferno-auto-tune_b90q3k.jpg']
                       },
 
                       {
@@ -61,7 +61,7 @@ service_seed_data = [
                         daily_rate: 333.0,
                         user_id: 3,
                         category: SERVICE_CATEGORIES[0],
-                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329733/helicopter_okveor.jpg']
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496414812/heart_tree_iindlp.jpg','http://res.cloudinary.com/printul/image/upload/v1496414812/boat_fpwtix.jpg','http://res.cloudinary.com/printul/image/upload/v1496329733/helicopter_okveor.jpg']
                       },
 
                       {
@@ -70,7 +70,7 @@ service_seed_data = [
                         daily_rate: 2000.0,
                         user_id: 1,
                         category: SERVICE_CATEGORIES[2],
-                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg']
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496415162/baloon_us8qw6.jpg','http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg','http://res.cloudinary.com/printul/image/upload/v1496415160/foggy-mist-forest-trees-42263_skrm3o.jpg']
                       },
 
                       {
@@ -79,7 +79,7 @@ service_seed_data = [
                         daily_rate: 45.0,
                         user_id: 3,
                         category: SERVICE_CATEGORIES[0],
-                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg']
+                        photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg','http://res.cloudinary.com/printul/image/upload/v1496384590/food_pqyh7z.jpg','http://res.cloudinary.com/printul/image/upload/v1495816365/qsbq0ltbq4edjd5devrb.jpg']
                       },
 
                       {
