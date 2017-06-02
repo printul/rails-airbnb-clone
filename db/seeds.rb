@@ -105,7 +105,7 @@ service_seed_data = [
                         description: "Non-fiction is a our thing. We travel the world and work with content producers to showcase reality. ",
                         daily_rate: 3000.0,
                         user_id: 1,
-                        category: SERVICE_CATEGORIES[3],
+                        category: SERVICE_CATEGORIES[2],
                         photo_urls: ['http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg']
                       },
 
