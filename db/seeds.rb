@@ -7,13 +7,21 @@ Booking.destroy_all
 Service.destroy_all
 User.destroy_all
 
+COMPANIES_URL = {
+                fashion: 'http://res.cloudinary.com/printul/image/upload/v1496383113/catwalk_uak1ir.jpg',
+                flying: 'http://res.cloudinary.com/printul/image/upload/v1496383108/flying_avhugf.jpg',
+                documentary: 'http://res.cloudinary.com/printul/image/upload/v1496383114/trekking-hiking-group-alpine-53214_o0dm0b.jpg',
+                food: 'http://res.cloudinary.com/printul/image/upload/v1496384590/food_pqyh7z.jpg',
+                surfing: 'http://res.cloudinary.com/printul/image/upload/v1496384612/surfing_eqbhdz.jpg'
+                }
+
 user_seed_data = [
                   { email: 'vendor@gmail.com',
                     password: 'vendorvendor',
                     first_name: "Jason",
                     last_name: "Cheung",
-                    address: "flat 5, little street, London",
-                    phone_number: "12345678"
+                    address: "14 Elder Street, London",
+                    phone_number: "+44 07593 933 726"
                   },
 
                   {
@@ -21,8 +29,8 @@ user_seed_data = [
                     password: 'buyerbuyer',
                     first_name: "Stephane",
                     last_name: "Mansour",
-                    address: "flat 7, little street, London",
-                    phone_number: "87654321"
+                    address: "1 Picadilly Street, London",
+                    phone_number: "+44 91834 847 312"
                   },
 
                   {
@@ -30,8 +38,8 @@ user_seed_data = [
                     password: '123456',
                     first_name: "John",
                     last_name: "Galt",
-                    address: "1, Broad Avenue, London",
-                    phone_number: "87654321"
+                    address: "17 Hyde Park Square, London",
+                    phone_number: "+44 03497 738 102"
                   }
                  ]
 
@@ -72,7 +80,43 @@ service_seed_data = [
                         user_id: 3,
                         category: SERVICE_CATEGORIES[1],
                         photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/focused_shot_q5m2ev.jpg'
-                      }
+                      },
+
+                      {
+                        name: "Fashion Videos",
+                        description: "From catwalks to video shoots, aspiring models to world class inspirers.",
+                        daily_rate: 1000.0,
+                        user_id: 3,
+                        category: SERVICE_CATEGORIES[1],
+                        photo_url: COMPANIES_URL[:fashion]
+                      },
+
+                      {
+                        name: "Sky labs",
+                        description: "We love flying and we love filming people who love flying.",
+                        daily_rate: 200.0,
+                        user_id: 3,
+                        category: SERVICE_CATEGORIES[1],
+                        photo_url: COMPANIES_URL[:flying]
+                      },
+
+                      {
+                        name: "Documentary avenue",
+                        description: "Non-fiction is a our thing. We travel the world and work with content producers to showcase reality. ",
+                        daily_rate: 3000.0,
+                        user_id: 1,
+                        category: SERVICE_CATEGORIES[3],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg'
+                      },
+
+                      {
+                        name: "Gnarly Studios",
+                        description: "We're not afraid of getting wet. Big waves and big surf are our speciality.",
+                        daily_rate: 2000.0,
+                        user_id: 1,
+                        category: SERVICE_CATEGORIES[1],
+                        photo_url: 'http://res.cloudinary.com/printul/image/upload/v1496329732/film_editing_kxezxs.jpg'
+                      },
                     ]
 
 ORDER_STATUSES = ["Pending", "Awaiting Payment", "Completed", "Declined", "Accepted"]
@@ -105,7 +149,7 @@ booking_seed_data = [
                         end_date: DateTime.new(2017, 7, 10),
                         total_cost: 18000.0,
                         order_status: ORDER_STATUSES[2],
-                        note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum et nisi vitae rutrum. Quisque a augue imperdiet, ullamcorper turpis et, fringilla purus. Fusce ut faucibus erat. Vestibulum sed massa in libero ultrices malesuada ut nec diam. Praesent posuere faucibus molestie. Vestibulum ac elit nec ligula varius pulvinar et ut ipsum. Fusce pharetra vel nunc ac laoreet."
+                        note: "Special requests: need extra staff on site during the last three days of shooting. Please reach out to discuss."
                       }
                     ]
 
